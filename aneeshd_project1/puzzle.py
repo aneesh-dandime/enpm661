@@ -94,7 +94,6 @@ class EightPuzzle:
             if top_node.is_goal(self.goal_state):
                 self.solved = True
                 self.goal_index = top_node.index
-                print(self.nodes[self.goal_index])
                 return True
 
             cnodes = top_node.children()
