@@ -2,6 +2,7 @@
 
 # Instructions to run code
 `cd aneeshd_project1`
+
 `python puzzle.py -is <starting_state>`
 
 # Please specify starting state as shown in the following example (without any extra spaces):
