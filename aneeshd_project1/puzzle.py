@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 import re
 
@@ -182,7 +183,11 @@ def get_state_np(state:  str) -> np.ndarray:
 
 
 def main():
-    state = input('Enter state: ').strip()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-is', '--input_state', required=True, 
+        help='Starting state of the puzzle, formatted as follows: [1,2,3],[4,5,6],[7,8,9]')
+    args = parser.parse_args()
+    state = args.input_state.strip()
     np_state = get_state_np(state)
     eight_puzzle = EightPuzzle(np_state)
 
