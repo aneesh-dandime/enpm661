@@ -2,7 +2,7 @@ import argparse
 import numpy as np
 import re
 
-from typing import Dict, List, Set, Tuple, TypeVar
+from typing import List, Set, Tuple, TypeVar
 from queue import Queue
 
 
@@ -69,12 +69,12 @@ class Node:
 
 
 class EightPuzzle:    
-    def __init__(self, init_state: np.ndarray) -> None:
+    def __init__(self, init_state: np.ndarray, goal: np.ndarray) -> None:
         self.init_state = init_state
         self.nodes = [Node(self.init_state, 0, -1)]
         self.solved = False
         self.goal_index = -1
-        self.goal_state = np.array([[1,2,3], [4,5,6], [7,8,0]])
+        self.goal_state = goal
     
     def solve(self) -> bool:
         if self.solved:
@@ -186,10 +186,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-is', '--input_state', required=True, 
         help='Starting state of the puzzle, formatted as follows: [1,2,3],[4,5,6],[7,8,9]')
+    parser.add_argument('-gs', '--goal_state', required=True, 
+        help='Final state of the puzzle, formatted as follows: [1,2,3],[4,5,6],[7,8,9]')
     args = parser.parse_args()
     state = args.input_state.strip()
+    goal = args.goal_state.strip()
     np_state = get_state_np(state)
-    eight_puzzle = EightPuzzle(np_state)
+    np_goal = get_state_np(goal)
+    eight_puzzle = EightPuzzle(np_state, np_goal)
 
     if eight_puzzle.solve():
         print('Solved!')
