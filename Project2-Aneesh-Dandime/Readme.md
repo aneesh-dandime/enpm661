@@ -10,3 +10,6 @@
 
 ## The repository containes two videos created using this code:
 'path1.avi' shows the path from (50, 130) to (280, 120) and 'path2.avi' shows the path from (0, 0) to (400, 250)
+
+## Link to repository:
+[Repository](https://github.com/aneesh-dandime/enpm661/tree/master/Project2-Aneesh-Dandime)
