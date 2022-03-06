@@ -2,6 +2,7 @@
 
 ## To run the code use the following commands:
 `cd Project2-Aneesh-Dandime`
+
 `python Dijkstra-pathplanning-Aneesh-Dandime.py --src_x=<src_x> --src_y=<source_y> --dst_x=<destination_x> --dst_y=<destination_y> --name=<name_of_video>`
 
 ## For example:
